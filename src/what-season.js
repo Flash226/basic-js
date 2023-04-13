@@ -2,51 +2,52 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Extract season from given date and expose the enemy scout!
- * 
+ *
  * @param {Date | FakeDate} date real or fake date
  * @returns {String} time of the year
- * 
+ *
  * @example
- * 
+ *
  * getSeason(new Date(2020, 02, 31)) => 'spring'
- * 
+ *
  */
 function getSeason(date) {
   if (date === undefined) return 'Unable to determine the time of year!';
+  
   try {
     date.getTime();
   } catch {
     throw new Error('Invalid date!');
   }
-  // if (Object.prototype.toString.call(date) !== '[object Date]') throw new Error('Invalid date!');
+
   switch (date.getMonth()) {
     case 0:
-      return 'winter'
+      return 'winter';
     case 1:
-      return 'winter'
+      return 'winter';
     case 2:
-      return 'spring'
+      return 'spring';
     case 3:
-      return 'spring'
+      return 'spring';
     case 4:
-      return 'spring'
+      return 'spring';
     case 5:
-      return 'summer'
+      return 'summer';
     case 6:
-      return 'summer'
+      return 'summer';
     case 7:
-      return 'summer'
+      return 'summer';
     case 8:
-      return 'autumn'
+      return 'autumn';
     case 9:
-      return 'autumn'
+      return 'autumn';
     case 10:
-      return 'autumn'
+      return 'autumn';
     case 11:
-      return 'winter'
+      return 'winter';
   }
 }
 
 module.exports = {
-  getSeason
+  getSeason,
 };
